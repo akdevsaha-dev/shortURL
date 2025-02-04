@@ -8,5 +8,4 @@ console.log(PORT);
 app.use(express());
 app.use("/api/v1/user", userRoute);
 // app.use("/api/v1/url", urlRoute);
-
 app.listen(PORT, () => console.log(`Server is lsitening on port:${PORT}`));
