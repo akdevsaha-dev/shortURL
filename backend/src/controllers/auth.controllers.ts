@@ -91,3 +91,21 @@ export const signin = async (req: Request, res: Response) => {
     });
   }
 };
+
+export const logout = async (req: Request, res: Response) => {
+  try {
+    res.cookie("jwt", "", {
+      maxAge: 0,
+    });
+    res.status(201).json({
+      message: "Logged out successfully",
+    });
+    return;
+  } catch (error) {
+    console.error(error);
+    console.log("error in logout controller");
+    res.json({
+      message: "Internal server error!",
+    });
+  }
+};
